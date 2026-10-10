@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a0d14">
+<title>kill_pv2</title>
+<link rel="stylesheet" href="__PREFIX__/static/app.css">
+</head>
+<body>
+<div id="login" class="hidden">
+  <form class="login-card" id="login-form" autocomplete="off">
+    <h1>🛡️ kill_pv2</h1>
+    <p>ورود به پنل مدیریت</p>
+    <input class="in" id="lg-user" placeholder="نام کاربری" required style="margin-bottom:10px">
+    <input class="in" id="lg-pass" type="password" placeholder="رمز عبور" required style="margin-bottom:14px">
+    <button class="btn full" id="lg-btn">ورود</button>
+    <div id="lg-msg" class="note" style="min-height:18px;text-align:center"></div>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div class="brand"><span class="dot" id="xray-dot"></span> kill_pv2 <span class="tag" id="tunnel-tag"></span></div>
+    <div class="row" style="flex:0;gap:6px">
+      <button class="btn sm ghost" id="btn-refresh" title="بروزرسانی">↻</button>
+      <button class="btn sm ghost" id="btn-logout">خروج</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ DASHBOARD ============ -->
+    <section class="page active" id="page-dash">
+      <div class="grid" id="dash-stats"></div>
+      <div class="card">
+        <h3>مصرف ۲۴ ساعت اخیر <span class="pill" id="dash-day"></span></h3>
+        <div class="spark" id="dash-spark"></div>
+      </div>
+      <div class="card">
+        <h3>بیشترین تبلیغات مسدودشده (۲۴h)</h3>
+        <div class="list" id="dash-blocked"></div>
+      </div>
+      <div class="hint warn hidden" id="pw-hint">⚠️ رمز عبور به‌صورت موقت تولید شده. برای رمز ثابت، سکرت <b>PANEL_PASS</b> را در GitHub تنظیم کن.</div>
+    </section>
+
+    <!-- ============ CLIENTS ============ -->
+    <section class="page" id="page-clients">
+      <div class="row">
+        <input class="in" id="cl-search" placeholder="جستجو…">
+        <button class="btn ok" id="btn-new" style="flex:0">＋ کانفیگ جدید</button>
+      </div>
+      <div id="clients-list"></div>
+    </section>
+
+    <!-- ============ LOGS / HISTORY ============ -->
+    <section class="page" id="page-logs">
+      <div class="seg" id="logs-seg">
+        <button class="active" data-v="history">تاریخچه کانفیگ‌ها</button>
+        <button data-v="events">رویدادهای سیستم</button>
+        <button data-v="live">ترافیک زنده</button>
+      </div>
+      <div id="logs-history">
+        <div class="card"><h3>کانفیگ را انتخاب کن</h3><div class="list" id="hist-clients"></div></div>
+        <div class="card hidden" id="hist-ips-card">
+          <h3><span id="hist-title"></span><button class="btn sm ghost" id="hist-export">⬇ خروجی رمزنگاری‌شده</button></h3>
+          <div class="list" id="hist-ips"></div>
+        </div>
+        <div class="card hidden" id="hist-visits-card">
+          <h3><span id="hist-visits-title"></span></h3>
+          <input class="in" id="hist-q" placeholder="فیلتر دامنه…" style="margin-bottom:8px">
+          <div class="list" id="hist-visits"></div>
+        </div>
+      </div>
+      <div id="logs-events" class="hidden"><div class="card"><h3>رویدادها <button class="btn sm ghost" id="ev-refresh">↻</button></h3><div class="log" id="ev-log"></div></div></div>
+      <div id="logs-live" class="hidden"><div class="card"><h3>آخرین اتصالات</h3><div class="log" id="live-log"></div></div></div>
+    </section>
+
+    <!-- ============ NOADS ============ -->
+    <section class="page" id="page-noads">
+      <div class="grid" id="noads-stats"></div>
+      <div class="card">
+        <h3>سطح فیلتر تبلیغات</h3>
+        <div class="seg" id="noads-level">
+          <button data-v="off">خاموش</button><button data-v="balanced">متعادل</button><button data-v="aggressive">تهاجمی</button><button data-v="strict">سخت‌گیر (لیست‌های آنلاین)</button>
+        </div>
+        <div class="note">متعادل: یوتیوب + شبکه‌های تبلیغاتی جهانی و ایرانی + geosite + الگوهای هوشمند. تهاجمی: + ردیاب‌ها و تله‌متری.</div>
+        <label class="chk" style="margin-top:6px"><input type="checkbox" id="noads-iran"> مسدودسازی شبکه‌های تبلیغاتی ایرانی (یکتانت، تپسل، …)</label>
+      </div>
+      <div class="card">
+        <h3>لیست سفارشی</h3>
+        <div class="row">
+          <div><div class="note">دامنه‌های مسدود (هر خط یکی)</div><textarea class="in" id="noads-block" placeholder="example-ads.com"></textarea></div>
+          <div><div class="note">لیست سفید (هرگز مسدود نشود)</div><textarea class="in" id="noads-white" placeholder="my-site.com"></textarea></div>
+        </div>
+        <button class="btn full" id="noads-save" style="margin-top:10px">ذخیره و اعمال</button>
+      </div>
+      <div class="card">
+        <h3>تست فیلتر</h3>
+        <div class="row"><input class="in" id="noads-test-in" placeholder="pagead2.googlesyndication.com, www.youtube.com"><button class="btn ghost" id="noads-test" style="flex:0">تست</button></div>
+        <div class="list" id="noads-test-out" style="margin-top:8px"></div>
+      </div>
+      <div class="card"><h3>بیشترین مسدودشده‌ها</h3><div class="list" id="noads-top"></div></div>
+    </section>
+
+    <!-- ============ BYPASS ============ -->
+    <section class="page" id="page-bypass">
+      <div class="card">
+        <h3>سایت‌های ایرانی</h3>
+        <div class="seg" id="bypass-mode"><button data-v="direct">مستقیم (بدون VPN)</button><button data-v="proxy">از طریق VPN</button></div>
+        <div class="note">در حالت مستقیم، همهٔ دامنه‌های .ir، geosite:category-ir، آی‌پی‌های ایران و <span id="bypass-core"></span> سرویس اصلی ایرانی (بانک‌ها، اسنپ، دیجی‌کالا…) بدون VPN باز می‌شوند تا کاربر سریع وارد شود.</div>
+      </div>
+      <div class="card">
+        <h3>دامنه‌های سفارشی</h3>
+        <div class="row">
+          <div><div class="note">همیشه مستقیم (بای‌پس VPN)</div><textarea class="in" id="bypass-direct" placeholder="mybank.com"></textarea></div>
+          <div><div class="note">همیشه از VPN (حتی اگر ایرانی باشد)</div><textarea class="in" id="bypass-proxy" placeholder="example.ir"></textarea></div>
+        </div>
+        <button class="btn full" id="bypass-save" style="margin-top:10px">ذخیره و اعمال</button>
+      </div>
+      <div class="card">
+        <h3>تست مسیر</h3>
+        <div class="row"><input class="in" id="bypass-test-in" placeholder="digikala.com, google.com"><button class="btn ghost" id="bypass-test" style="flex:0">تست</button></div>
+        <div class="list" id="bypass-test-out" style="margin-top:8px"></div>
+      </div>
+      <div class="hint">قوانین بای‌پس داخل ساب <b>Smart JSON</b> و <b>sing-box</b> هر کانفیگ قرار می‌گیرد. برای فعال شدن، کاربر باید ساب JSON را ایمپورت کند (v2rayNG → Custom config / Hiddify / sing-box).</div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section class="page" id="page-settings">
+      <div class="card">
+        <h3>آی‌پی‌های تمیز (Pool)</h3>
+        <div class="note">این لیست در ساب Smart به‌صورت Balancer با leastPing استفاده می‌شود؛ کلاینت خودکار سریع‌ترین مسیر را انتخاب می‌کند.</div>
+        <textarea class="in" id="set-pool"></textarea>
+        <button class="btn full" id="set-save" style="margin-top:10px">ذخیره</button>
+      </div>
+      <div class="card">
+        <h3>اسکنر آی‌پی تمیز کلودفلر</h3>
+        <div class="row"><button class="btn pur" id="scan-btn">▶ شروع اسکن</button><span class="pill" id="scan-status">آماده</span></div>
+        <textarea class="in" id="scan-out" readonly style="margin-top:8px" placeholder="نتایج اینجا…"></textarea>
+      </div>
+      <div class="card"><h3>اطلاعات سیستم</h3><div id="set-info"></div></div>
+    </section>
+  </main>
+
+  <nav class="tabs">
+    <button class="active" data-p="dash"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>داشبورد</button>
+    <button data-p="clients"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4a3.5 3.5 0 0 1 0 7"/><path d="M18 14.5a5 5 0 0 1 3.5 5.5"/></svg>کانفیگ‌ها</button>
+    <button data-p="logs"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h16"/></svg>لاگ‌ها</button>
+    <button data-p="noads"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8 8l8 8M16 8l-8 8"/></svg>NoAds</button>
+    <button data-p="bypass"><svg viewBox="0 0 24 24"><path d="M4 7h7l4 10h5M4 17h7l4-10h5"/></svg>بای‌پس</button>
+    <button data-p="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>تنظیمات</button>
+  </nav>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<script>window.PREFIX="__PREFIX__";</script>
+<script src="__PREFIX__/static/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+data/killpv2.db
+data/killpv2.db-*
+data/cache/
+*.log
+__pycache__/
+*.pyc
+active_edge_host.txt
+cloudflare_edge.log
+xray.zip
+edge_driver.deb
+node_modules/
+.wrangler/
+.env
+.dev.vars
+.next_run_triggered
+data/cache/
+tests/_tmp/
