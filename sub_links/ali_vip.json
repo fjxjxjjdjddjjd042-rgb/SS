@@ -56,7 +56,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "speed.cloudflare.com",
+      "address": "172.64.149.23",
       "port": 443,
       "users": [
        {
@@ -99,7 +99,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "cp.cloudflare.com",
+      "address": "speed.cloudflare.com",
       "port": 443,
       "users": [
        {
@@ -142,7 +142,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "www.visa.com.sg",
+      "address": "cp.cloudflare.com",
       "port": 443,
       "users": [
        {
@@ -185,7 +185,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "zula.ir",
+      "address": "www.visa.com.sg",
       "port": 443,
       "users": [
        {
@@ -228,7 +228,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "icook.hk",
+      "address": "zula.ir",
       "port": 443,
       "users": [
        {
@@ -267,6 +267,49 @@
   },
   {
    "tag": "proxy-5",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "icook.hk",
+      "port": 443,
+      "users": [
+       {
+        "id": "c0e0b800-ac15-4e2b-abc6-a24893cee1e7",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "namely-vsnet-revenues-social.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "namely-vsnet-revenues-social.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-6",
    "protocol": "vless",
    "settings": {
     "vnext": [
@@ -401,6 +444,7 @@
      "proxy-3",
      "proxy-4",
      "proxy-5",
+     "proxy-6",
      "proxy-direct"
     ],
     "strategy": {
@@ -194219,6 +194263,7 @@
    "proxy-3",
    "proxy-4",
    "proxy-5",
+   "proxy-6",
    "proxy-direct"
   ],
   "probeURL": "https://www.gstatic.com/generate_204",
