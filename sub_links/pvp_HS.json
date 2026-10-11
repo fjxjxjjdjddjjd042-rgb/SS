@@ -1,0 +1,1235 @@
+{
+ "remarks": "kill_pv2 • pvp_HS • Smart",
+ "log": {
+  "loglevel": "warning"
+ },
+ "dns": {
+  "servers": [
+   {
+    "address": "https://1.1.1.1/dns-query"
+   },
+   {
+    "address": "https://8.8.8.8/dns-query"
+   },
+   {
+    "address": "178.22.122.100",
+    "domains": [
+     "geosite:category-ir",
+     "regexp:\\.ir$"
+    ],
+    "skipFallback": true
+   },
+   "localhost"
+  ],
+  "queryStrategy": "UseIPv4"
+ },
+ "inbounds": [
+  {
+   "tag": "socks-in",
+   "listen": "127.0.0.1",
+   "port": 10808,
+   "protocol": "socks",
+   "settings": {
+    "udp": true,
+    "auth": "noauth"
+   },
+   "sniffing": {
+    "enabled": true,
+    "destOverride": [
+     "http",
+     "tls",
+     "quic"
+    ]
+   }
+  },
+  {
+   "tag": "http-in",
+   "listen": "127.0.0.1",
+   "port": 10809,
+   "protocol": "http"
+  }
+ ],
+ "outbounds": [
+  {
+   "tag": "proxy-0",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "172.64.149.23",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-1",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "speed.cloudflare.com",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-2",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "cp.cloudflare.com",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-3",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "www.visa.com.sg",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-4",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "zula.ir",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-5",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "icook.hk",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-6",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "ip.sb",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "proxy-direct",
+   "protocol": "vless",
+   "settings": {
+    "vnext": [
+     {
+      "address": "essentially-money-declaration-seeing.trycloudflare.com",
+      "port": 443,
+      "users": [
+       {
+        "id": "5d530d96-305f-462d-8d15-252382b3d816",
+        "encryption": "none",
+        "level": 0
+       }
+      ]
+     }
+    ]
+   },
+   "streamSettings": {
+    "network": "ws",
+    "security": "tls",
+    "tlsSettings": {
+     "serverName": "essentially-money-declaration-seeing.trycloudflare.com",
+     "allowInsecure": false,
+     "fingerprint": "chrome",
+     "alpn": [
+      "http/1.1"
+     ]
+    },
+    "wsSettings": {
+     "path": "/killpv2",
+     "host": "essentially-money-declaration-seeing.trycloudflare.com"
+    },
+    "sockopt": {
+     "dialerProxy": "fragment",
+     "tcpKeepAliveIdle": 60,
+     "tcpNoDelay": true
+    }
+   },
+   "mux": {
+    "enabled": false
+   }
+  },
+  {
+   "tag": "fragment",
+   "protocol": "freedom",
+   "settings": {
+    "fragment": {
+     "packets": "tlshello",
+     "length": "10-30",
+     "interval": "2-5"
+    }
+   },
+   "streamSettings": {
+    "sockopt": {
+     "tcpNoDelay": true,
+     "tcpKeepAliveIdle": 60
+    }
+   }
+  },
+  {
+   "tag": "direct",
+   "protocol": "freedom",
+   "settings": {
+    "domainStrategy": "UseIPv4"
+   }
+  },
+  {
+   "tag": "block",
+   "protocol": "blackhole",
+   "settings": {
+    "response": {
+     "type": "http"
+    }
+   }
+  },
+  {
+   "tag": "dns-out",
+   "protocol": "dns"
+  }
+ ],
+ "routing": {
+  "domainStrategy": "IPIfNonMatch",
+  "balancers": [
+   {
+    "tag": "fast",
+    "selector": [
+     "proxy-0",
+     "proxy-1",
+     "proxy-2",
+     "proxy-3",
+     "proxy-4",
+     "proxy-5",
+     "proxy-6",
+     "proxy-direct"
+    ],
+    "strategy": {
+     "type": "leastPing"
+    },
+    "fallbackTag": "proxy-direct"
+   }
+  ],
+  "rules": [
+   {
+    "type": "field",
+    "inboundTag": [
+     "socks-in",
+     "http-in"
+    ],
+    "port": 53,
+    "outboundTag": "dns-out"
+   },
+   {
+    "type": "field",
+    "domain": [
+     "domain:doubleclick.net",
+     "domain:googlesyndication.com",
+     "domain:googleadservices.com",
+     "domain:googletagservices.com",
+     "domain:2mdn.net",
+     "domain:adservice.google.com",
+     "domain:mobileads.google.com",
+     "domain:ads.youtube.com",
+     "domain:ad.youtube.com",
+     "domain:youtube.cleverads.vn",
+     "domain:pagead.l.doubleclick.net",
+     "domain:pagead2.googlesyndication.com",
+     "domain:googleads.g.doubleclick.net",
+     "domain:static.doubleclick.net",
+     "domain:stats.g.doubleclick.net",
+     "domain:cm.g.doubleclick.net",
+     "domain:pubads.g.doubleclick.net",
+     "domain:securepubads.g.doubleclick.net",
+     "domain:video-ad-stats.googlesyndication.com",
+     "domain:tpc.googlesyndication.com",
+     "domain:afs.googlesyndication.com",
+     "domain:s.youtube.com",
+     "domain:ad.doubleclick.net",
+     "domain:bid.g.doubleclick.net",
+     "domain:fls.doubleclick.net",
+     "domain:m.doubleclick.net",
+     "domain:googleadapis.l.google.com",
+     "domain:pagead-googlehosted.l.google.com",
+     "domain:partnerad.l.doubleclick.net",
+     "domain:www.googleadservices.com",
+     "domain:ade.googlesyndication.com",
+     "domain:ads.youtube.l.google.com",
+     "domain:ssl.google-analytics.com",
+     "domain:www.google-analytics.com",
+     "domain:ad.mail.google.com",
+     "domain:adwords.google.com",
+     "domain:admob.google.com",
+     "domain:ads.g.doubleclick.net",
+     "domain:admob.com",
+     "domain:ads.google.com",
+     "domain:adsense.google.com",
+     "domain:adx.g.doubleclick.net",
+     "domain:ad.mo.doubleclick.net",
+     "domain:ad-g.doubleclick.net",
+     "domain:adclick.g.doubleclick.net",
+     "domain:surveys.g.doubleclick.net",
+     "domain:googlesyndication-cn.com",
+     "domain:adservice.google.com.hk",
+     "domain:adservice.google.de",
+     "domain:adservice.google.co.uk",
+     "domain:adservice.google.fr",
+     "domain:adservice.google.ca",
+     "domain:adservice.google.com.au",
+     "domain:adservice.google.co.in",
+     "domain:doubleclickbygoogle.com",
+     "domain:google-analytics.com",
+     "domain:analytics.google.com",
+     "domain:app-measurement.com",
+     "domain:firebase-settings.crashlytics.com",
+     "domain:s0.2mdn.net",
+     "domain:innovid.com",
+     "domain:serving-sys.com",
+     "domain:imasdk.googleapis.com",
+     "domain:adnxs.com",
+     "domain:adsrvr.org",
+     "domain:rubiconproject.com",
+     "domain:pubmatic.com",
+     "domain:openx.net",
+     "domain:criteo.com",
+     "domain:criteo.net",
+     "domain:taboola.com",
+     "domain:outbrain.com",
+     "domain:mgid.com",
+     "domain:revcontent.com",
+     "domain:adform.net",
+     "domain:smartadserver.com",
+     "domain:casalemedia.com",
+     "domain:indexww.com",
+     "domain:33across.com",
+     "domain:sharethrough.com",
+     "domain:triplelift.com",
+     "domain:amazon-adsystem.com",
+     "domain:moatads.com",
+     "domain:scorecardresearch.com",
+     "domain:quantserve.com",
+     "domain:bluekai.com",
+     "domain:demdex.net",
+     "domain:everesttech.net",
+     "domain:adsafeprotected.com",
+     "domain:doubleverify.com",
+     "domain:sizmek.com",
+     "domain:yieldmo.com",
+     "domain:media.net",
+     "domain:bidswitch.net",
+     "domain:lijit.com",
+     "domain:sovrn.com",
+     "domain:teads.tv",
+     "domain:undertone.com",
+     "domain:zedo.com",
+     "domain:advertising.com",
+     "domain:adtech.de",
+     "domain:adtechus.com",
+     "domain:exoclick.com",
+     "domain:exosrv.com",
+     "domain:juicyads.com",
+     "domain:trafficjunky.net",
+     "domain:trafficjunky.com",
+     "domain:popads.net",
+     "domain:popcash.net",
+     "domain:propellerads.com",
+     "domain:propellerclick.com",
+     "domain:onclickads.net",
+     "domain:onclkds.com",
+     "domain:adcash.com",
+     "domain:hilltopads.net",
+     "domain:clickadu.com",
+     "domain:adsterra.com",
+     "domain:a-ads.com",
+     "domain:bidvertiser.com",
+     "domain:ad-maven.com",
+     "domain:yllix.com",
+     "domain:adskeeper.co.uk",
+     "domain:adskeeper.com",
+     "domain:rtbhouse.com",
+     "domain:creativecdn.com",
+     "domain:yieldlab.net",
+     "domain:improvedigital.com",
+     "domain:smaato.net",
+     "domain:smaato.com",
+     "domain:inmobi.com",
+     "domain:mopub.com",
+     "domain:adcolony.com",
+     "domain:applovin.com",
+     "domain:applvn.com",
+     "domain:unityads.unity3d.com",
+     "domain:vungle.com",
+     "domain:chartboost.com",
+     "domain:ironsrc.com",
+     "domain:supersonicads.com",
+     "domain:ironsrc.mobi",
+     "domain:startapp.com",
+     "domain:startappservice.com",
+     "domain:appsflyer.com",
+     "domain:adjust.com",
+     "domain:adjust.io",
+     "domain:kochava.com",
+     "domain:tapjoy.com",
+     "domain:fyber.com",
+     "domain:mintegral.com",
+     "domain:pangle.io",
+     "domain:pangleglobal.com",
+     "domain:bytedance-ads.com",
+     "domain:liftoff.io",
+     "domain:moloco.com",
+     "domain:adikteev.com",
+     "domain:appnext.com",
+     "domain:appnexus.com",
+     "domain:mediavine.com",
+     "domain:ezoic.net",
+     "domain:ezodn.com",
+     "domain:carbonads.com",
+     "domain:carbonads.net",
+     "domain:buysellads.com",
+     "domain:buysellads.net",
+     "domain:adroll.com",
+     "domain:perfectaudience.com",
+     "domain:ligatus.com",
+     "domain:plista.com",
+     "domain:nativeads.com",
+     "domain:contentad.net",
+     "domain:adblade.com",
+     "domain:zemanta.com",
+     "domain:spotxchange.com",
+     "domain:spotx.tv",
+     "domain:springserve.com",
+     "domain:freewheel.tv",
+     "domain:fwmrm.net",
+     "domain:tremorhub.com",
+     "domain:telaria.com",
+     "domain:beachfront.com",
+     "domain:adotmob.com",
+     "domain:adtelligent.com",
+     "domain:vidoomy.com",
+     "domain:vlitag.com",
+     "domain:a-mo.net",
+     "domain:adnium.com",
+     "domain:ero-advertising.com",
+     "domain:plugrush.com",
+     "domain:tsyndicate.com",
+     "domain:realsrv.com",
+     "domain:mc.yandex.ru",
+     "domain:an.yandex.ru",
+     "domain:yandexadexchange.net",
+     "domain:adfox.ru",
+     "domain:adriver.ru",
+     "domain:betweendigital.com",
+     "domain:ad-score.com",
+     "domain:adsco.re",
+     "domain:pixfuture.com",
+     "domain:sortable.com",
+     "domain:yieldbird.com",
+     "domain:connatix.com",
+     "domain:primis.tech",
+     "domain:sekindo.com",
+     "domain:vidazoo.com",
+     "domain:aniview.com",
+     "domain:adpushup.com",
+     "domain:adthrive.com",
+     "domain:raptive.com",
+     "domain:cafemedia.com",
+     "domain:bttrack.com",
+     "domain:bidtellect.com",
+     "domain:gumgum.com",
+     "domain:kargo.com",
+     "domain:nativo.com",
+     "domain:onetag-sys.com",
+     "domain:richaudience.com",
+     "domain:seedtag.com",
+     "domain:sonobi.com",
+     "domain:unrulymedia.com",
+     "domain:vdo.ai",
+     "domain:adgrx.com",
+     "domain:adhigh.net",
+     "domain:adkernel.com",
+     "domain:admixer.net",
+     "domain:adspirit.de",
+     "domain:adsymptotic.com",
+     "domain:adtarget.me",
+     "domain:adtrue.com",
+     "domain:atdmt.com",
+     "domain:ads.linkedin.com",
+     "domain:ads.pinterest.com",
+     "domain:ads.tiktok.com",
+     "domain:ads-api.tiktok.com",
+     "domain:analytics.tiktok.com",
+     "domain:ads.twitter.com",
+     "domain:ads-twitter.com",
+     "domain:ads.yahoo.com",
+     "domain:adtechjp.com",
+     "domain:adsmoloco.com",
+     "domain:cloudflareinsights.com",
+     "domain:ads.reddit.com",
+     "domain:events.reddit.com",
+     "domain:pixel.reddit.com",
+     "domain:ads.instagram.com",
+     "domain:an.facebook.com",
+     "domain:ads.facebook.com",
+     "domain:ad-delivery.net",
+     "domain:adspyglass.com",
+     "domain:adtng.com",
+     "domain:adxpansion.com",
+     "domain:clickaine.com",
+     "domain:clicksgear.com",
+     "domain:cpmstar.com",
+     "domain:exdynsrv.com",
+     "domain:galaksion.com",
+     "domain:hilltopads.com",
+     "domain:monetag.com",
+     "domain:notix.io",
+     "domain:pushame.com",
+     "domain:pushnative.com",
+     "domain:richpush.co",
+     "domain:evadav.com",
+     "domain:adsterratech.com",
+     "domain:adbison.com",
+     "domain:trafficstars.com",
+     "domain:adxcore.com",
+     "domain:adoperator.com",
+     "domain:popmyads.com",
+     "domain:popunder.net",
+     "domain:poptm.com",
+     "domain:zeropark.com",
+     "domain:rtmark.net",
+     "domain:magsrv.com",
+     "domain:aralego.com",
+     "domain:adsrvmedia.com",
+     "domain:adsrvmedia.net",
+     "domain:mobiads.net",
+     "domain:adbuddiz.com",
+     "domain:adincube.com",
+     "domain:adfalcon.com",
+     "domain:adiquity.com",
+     "domain:admarvel.com",
+     "domain:admaxim.com",
+     "domain:admedo.com",
+     "domain:adperium.com",
+     "domain:adsmogo.com",
+     "domain:adtilt.com",
+     "domain:airpush.com",
+     "domain:amobee.com",
+     "domain:avazutracking.net",
+     "domain:greystripe.com",
+     "domain:inner-active.mobi",
+     "domain:jumptap.com",
+     "domain:leadbolt.com",
+     "domain:leadboltads.net",
+     "domain:leadboltapps.net",
+     "domain:madvertise.com",
+     "domain:millennialmedia.com",
+     "domain:mobclix.com",
+     "domain:mobfox.com",
+     "domain:mobpartner.com",
+     "domain:mojiva.com",
+     "domain:nexage.com",
+     "domain:pubnative.net",
+     "domain:smartyads.com",
+     "domain:tapit.com",
+     "domain:vdopia.com",
+     "domain:velti.com",
+     "domain:widespace.com",
+     "domain:xad.com",
+     "domain:youmi.net",
+     "domain:zumobi.com",
+     "domain:adhese.com",
+     "domain:bidr.io",
+     "domain:contextweb.com",
+     "domain:pulsepoint.com",
+     "domain:districtm.io",
+     "domain:emxdgt.com",
+     "domain:gothamads.com",
+     "domain:inmobi.net",
+     "domain:loopme.com",
+     "domain:loopme.me",
+     "domain:mathtag.com",
+     "domain:mediamath.com",
+     "domain:mfadsrvr.com",
+     "domain:ml314.com",
+     "domain:nexac.com",
+     "domain:openx.com",
+     "domain:owneriq.net",
+     "domain:pubmine.com",
+     "domain:quantcount.com",
+     "domain:rfihub.com",
+     "domain:rhythmone.com",
+     "domain:rlcdn.com",
+     "domain:servenobid.com",
+     "domain:simpli.fi",
+     "domain:smartclip.net",
+     "domain:stickyadstv.com",
+     "domain:tapad.com",
+     "domain:turn.com",
+     "domain:w55c.net",
+     "domain:yieldmanager.com",
+     "domain:yieldoptimizer.com",
+     "domain:zqtk.net",
+     "domain:1rx.io",
+     "domain:3lift.com",
+     "domain:flashtalking.com",
+     "domain:eyeota.net",
+     "domain:exelator.com",
+     "domain:krxd.net",
+     "domain:liadm.com",
+     "domain:agkn.com",
+     "domain:business-api.tiktok.com",
+     "domain:ads-sg.tiktok.com",
+     "domain:log.byteoversea.com",
+     "domain:mon.byteoversea.com",
+     "domain:ads.snapchat.com",
+     "domain:adsapi.snapchat.com",
+     "domain:analytics.yahoo.com",
+     "domain:ads.microsoft.com",
+     "domain:bat.bing.com",
+     "domain:ads.bing.com",
+     "domain:flex.msn.com",
+     "domain:rad.msn.com",
+     "domain:a.ads1.msn.com",
+     "domain:ads.mopub.com",
+     "domain:ads.inmobi.com",
+     "domain:ads.flurry.com",
+     "domain:adserver.unityads.unity3d.com",
+     "domain:ads.ironsrc.com",
+     "domain:ads.vungle.com",
+     "domain:ads.chartboost.com",
+     "domain:ads.adcolony.com",
+     "domain:ads.tapjoy.com",
+     "domain:ads.fyber.com",
+     "domain:ads.mintegral.com",
+     "domain:ads.pangle.io",
+     "domain:ads.liftoff.io",
+     "domain:ads.moloco.com",
+     "domain:ads.appnext.com",
+     "domain:ads.startapp.com",
+     "domain:yektanet.com",
+     "domain:mediaad.org",
+     "domain:tapsell.ir",
+     "domain:tapsell.net",
+     "domain:anetwork.ir",
+     "domain:sabavision.com",
+     "domain:daartads.com",
+     "domain:clickyab.com",
+     "domain:e-click.ir",
+     "domain:adad.ir",
+     "domain:magnetadservices.com",
+     "domain:adivery.com",
+     "domain:pushe.co",
+     "domain:najva.com",
+     "domain:metrix.ir",
+     "domain:deema.agency",
+     "domain:kaprila.com",
+     "domain:adro.ir",
+     "domain:tapligh.com",
+     "domain:affilio.ir",
+     "domain:adsmanager.ir",
+     "domain:adsvis.ir",
+     "domain:irdiba.com",
+     "domain:adsdigital.ir",
+     "domain:nasimads.ir",
+     "domain:tabanad.ir",
+     "domain:zarinads.ir",
+     "domain:adwiz.ir",
+     "domain:iranads.ir",
+     "domain:adsmile.ir",
+     "domain:mediadad.ir",
+     "domain:adroll.ir",
+     "domain:ad-tech.ir",
+     "domain:chabok.io",
+     "domain:chabokpush.com",
+     "domain:webengage.com",
+     "domain:sanjagh.net",
+     "domain:adnegar.com",
+     "domain:yektanet.ir",
+     "domain:adivery.ir",
+     "domain:a.yektanet.com",
+     "domain:s.yektanet.com",
+     "domain:r.yektanet.com",
+     "domain:static.yektanet.com",
+     "domain:api.yektanet.com",
+     "domain:cdn.yektanet.com",
+     "domain:s1.mediaad.org",
+     "domain:s2.mediaad.org",
+     "domain:static.mediaad.org",
+     "domain:api.tapsell.ir",
+     "domain:sdk.tapsell.ir",
+     "domain:static.tapsell.ir",
+     "domain:plus.tapsell.ir",
+     "domain:ads.anetwork.ir",
+     "domain:static.anetwork.ir",
+     "domain:cdn.anetwork.ir",
+     "domain:ad.sabavision.com",
+     "domain:static.sabavision.com",
+     "domain:clickyab.ir",
+     "domain:static.clickyab.com",
+     "domain:ck.clickyab.com",
+     "domain:s.adad.ir",
+     "domain:static.adad.ir",
+     "domain:api.adad.ir",
+     "domain:s.adro.ir",
+     "domain:cdn.adro.ir",
+     "domain:api.pushe.co",
+     "domain:static.pushe.co",
+     "domain:sdk.pushe.co",
+     "domain:app.najva.com",
+     "domain:static.najva.com",
+     "domain:api.najva.com",
+     "domain:analytics.metrix.ir",
+     "domain:api.metrix.ir",
+     "domain:sdk.metrix.ir",
+     "domain:tracker.metrix.ir",
+     "domain:ads.deema.agency",
+     "domain:ads.kaprila.com",
+     "domain:api.chabok.io",
+     "domain:sandbox.chabok.io",
+     "domain:ad.tapligh.com",
+     "domain:static.tapligh.com",
+     "domain:api.tapligh.com",
+     "domain:ads.affilio.ir",
+     "domain:ads.irdiba.com",
+     "domain:ads.sanjagh.net",
+     "domain:ads.varzesh3.com",
+     "domain:ad.varzesh3.com",
+     "domain:ads.digikala.com",
+     "domain:ads.aparat.com",
+     "domain:ad.aparat.com",
+     "domain:ads.filimo.com",
+     "domain:ads.namava.ir",
+     "domain:ads.telewebion.com",
+     "domain:ads.divar.ir",
+     "domain:ad.divar.ir",
+     "domain:ads.sheypoor.com",
+     "domain:ads.torob.com",
+     "domain:ads.cafebazaar.ir",
+     "domain:ads.myket.ir",
+     "domain:ad.myket.ir",
+     "domain:ads.snapp.ir",
+     "domain:ads.tapsi.ir",
+     "domain:ads.rubika.ir",
+     "domain:ads.eitaa.com"
+    ],
+    "outboundTag": "block",
+    "ruleTag": "noads-block"
+   },
+   {
+    "type": "field",
+    "domain": [
+     "domain:googlevideo.com",
+     "domain:youtube.com",
+     "domain:youtu.be",
+     "domain:ytimg.com",
+     "domain:ggpht.com",
+     "domain:youtubei.googleapis.com",
+     "domain:googleapis.com",
+     "domain:gstatic.com",
+     "domain:googleusercontent.com",
+     "domain:accounts.google.com",
+     "domain:play.google.com",
+     "domain:android.com",
+     "domain:gvt1.com",
+     "domain:gvt2.com",
+     "domain:cloudflare.com",
+     "domain:cloudflare-dns.com",
+     "domain:trycloudflare.com",
+     "domain:workers.dev",
+     "domain:telegram.org",
+     "domain:t.me",
+     "domain:cdn-telegram.org",
+     "domain:telesco.pe",
+     "domain:web.telegram.org",
+     "domain:whatsapp.net",
+     "domain:whatsapp.com",
+     "domain:fbcdn.net",
+     "domain:cdninstagram.com",
+     "domain:instagram.com",
+     "domain:twimg.com",
+     "domain:x.com",
+     "domain:twitter.com",
+     "domain:discord.com",
+     "domain:discordapp.com",
+     "domain:discord.gg",
+     "domain:discord.media",
+     "domain:steamstatic.com",
+     "domain:steampowered.com",
+     "domain:steamcommunity.com",
+     "domain:epicgames.com",
+     "domain:riotgames.com",
+     "domain:pvp.net",
+     "domain:riotcdn.net",
+     "domain:playstation.net",
+     "domain:xboxlive.com",
+     "domain:ea.com",
+     "domain:origin.com",
+     "domain:blizzard.com",
+     "domain:battle.net",
+     "domain:supercell.com",
+     "domain:supercellcdn.com",
+     "domain:clashofclans.com",
+     "domain:pubgmobile.com",
+     "domain:igamecj.com",
+     "domain:tencentgames.com",
+     "domain:garena.com",
+     "domain:freefiremobile.com",
+     "domain:spotify.com",
+     "domain:scdn.co",
+     "domain:spotifycdn.com",
+     "domain:netflix.com",
+     "domain:nflxvideo.net",
+     "domain:nflximg.net",
+     "domain:apple.com",
+     "domain:icloud.com",
+     "domain:mzstatic.com",
+     "domain:microsoft.com",
+     "domain:windowsupdate.com",
+     "domain:live.com",
+     "domain:office.com",
+     "domain:github.com",
+     "domain:githubusercontent.com",
+     "domain:cloudfront.net",
+     "domain:akamaihd.net",
+     "domain:akamaized.net",
+     "domain:fastly.net",
+     "domain:twitch.tv",
+     "domain:ttvnw.net",
+     "domain:jtvnw.net",
+     "domain:reddit.com",
+     "domain:redd.it",
+     "domain:redditmedia.com",
+     "domain:wikipedia.org",
+     "domain:duckduckgo.com",
+     "domain:bing.com",
+     "domain:openai.com",
+     "domain:chatgpt.com",
+     "domain:oaistatic.com",
+     "domain:oaiusercontent.com",
+     "domain:anthropic.com",
+     "domain:claude.ai"
+    ],
+    "ruleTag": "noads-protect",
+    "balancerTag": "fast"
+   },
+   {
+    "type": "field",
+    "domain": [
+     "geosite:category-ads-all",
+     "regexp:^(?:[^.]+\\.)*(?:ads?|ads?[0-9]{1,3}|adserver[0-9]*|adservice[s]?|adserv[0-9]*|adsrv[0-9]*|adsys[0-9]*|adx|advert(ising|isement|s)?|adimg[0-9]*|adtech|adform|adunit[s]?|adtrack(ing|er)?|pagead[0-9]*|doubleclick|banners?|bannerads?|popunder|popads|pop-?ups?|sponsor(ed|s)?|affiliat(e|es|ion)|preroll|video-?ads?|adsdk|ad-?sdk|ad-?delivery|ad-?manager|ad-?stats?|adlogs?|adclicks?|adrotat(e|or)|ad-?exchange|ad-?platform|adcdn|ad-?cdn|adcontent|adsales|adspace|admob|admeld|openx|rtb|ssp|dsp|bidder|bidding|prebid)\\.(?:[^.]+\\.)+[^.]+$"
+    ],
+    "outboundTag": "block",
+    "ruleTag": "noads-heuristic"
+   },
+   {
+    "type": "field",
+    "ip": [
+     "geoip:private",
+     "10.0.0.0/8",
+     "172.16.0.0/12",
+     "192.168.0.0/16",
+     "127.0.0.0/8",
+     "169.254.0.0/16",
+     "fc00::/7",
+     "fe80::/10"
+    ],
+    "outboundTag": "direct",
+    "ruleTag": "lan-direct"
+   },
+   {
+    "type": "field",
+    "domain": [
+     "geosite:category-ir",
+     "regexp:\\.ir$",
+     "domain:digikala.com",
+     "domain:snapp.ir",
+     "domain:snapp.taxi",
+     "domain:tapsi.ir",
+     "domain:tap30.ir",
+     "domain:divar.ir",
+     "domain:sheypoor.com",
+     "domain:torob.com",
+     "domain:basalam.com",
+     "domain:aparat.com",
+     "domain:filimo.com",
+     "domain:namava.ir",
+     "domain:telewebion.com",
+     "domain:shaparak.ir",
+     "domain:sep.ir",
+     "domain:bpm.ir",
+     "domain:bmi.ir",
+     "domain:bankmellat.ir",
+     "domain:sb24.ir",
+     "domain:pasargad.com",
+     "domain:bpi.ir",
+     "domain:tejaratbank.ir",
+     "domain:banksepah.ir",
+     "domain:zarinpal.com",
+     "domain:idpay.ir",
+     "domain:payping.ir",
+     "domain:nextpay.ir",
+     "domain:irancell.ir",
+     "domain:mci.ir",
+     "domain:rightel.ir",
+     "domain:shatel.ir",
+     "domain:tci.ir",
+     "domain:mytci.ir",
+     "domain:hamrahcard.ir",
+     "domain:rubika.ir",
+     "domain:eitaa.com",
+     "domain:bale.ai",
+     "domain:igap.net",
+     "domain:soroush-app.ir",
+     "domain:gap.im",
+     "domain:splus.ir",
+     "domain:shad.ir",
+     "domain:cafebazaar.ir",
+     "domain:myket.ir",
+     "domain:sibapp.com",
+     "domain:balad.ir",
+     "domain:neshan.org",
+     "domain:alibaba.ir",
+     "domain:snapptrip.com",
+     "domain:flytoday.ir",
+     "domain:mrbilit.com",
+     "domain:safar724.com",
+     "domain:irib.ir",
+     "domain:iribnews.ir",
+     "domain:isna.ir",
+     "domain:irna.ir",
+     "domain:tasnimnews.com",
+     "domain:farsnews.ir",
+     "domain:mehrnews.com",
+     "domain:khabaronline.ir",
+     "domain:varzesh3.com",
+     "domain:tgju.org",
+     "domain:bonbast.com",
+     "domain:nobitex.ir",
+     "domain:wallex.ir",
+     "domain:ramzinex.com",
+     "domain:bitpin.ir",
+     "domain:tabdeal.org",
+     "domain:exir.io",
+     "domain:ok-ex.io",
+     "domain:sahamyab.com",
+     "domain:rahavard365.com",
+     "domain:tsetmc.com",
+     "domain:codal.ir",
+     "domain:arvancloud.ir",
+     "domain:arvancloud.com",
+     "domain:r1c.ir",
+     "domain:iranserver.com",
+     "domain:parspack.com",
+     "domain:hamravesh.com",
+     "domain:liara.ir",
+     "domain:gov.ir",
+     "domain:my.gov.ir",
+     "domain:sana.ir",
+     "domain:ssaa.ir",
+     "domain:tamin.ir",
+     "domain:sabteahval.ir",
+     "domain:epolice.ir",
+     "domain:rahvar120.ir",
+     "domain:police.ir",
+     "domain:post.ir",
+     "domain:tipax.ir",
+     "domain:chapar.ir",
+     "domain:okala.com",
+     "domain:snappfood.ir",
+     "domain:zoodfood.com",
+     "domain:delino.com",
+     "domain:reyhoon.com",
+     "domain:tapsifood.com"
+    ],
+    "outboundTag": "direct",
+    "ruleTag": "bypass-direct"
+   },
+   {
+    "type": "field",
+    "ip": [
+     "geoip:ir"
+    ],
+    "outboundTag": "direct",
+    "ruleTag": "bypass-ir-ip"
+   },
+   {
+    "type": "field",
+    "network": "udp",
+    "balancerTag": "fast"
+   },
+   {
+    "type": "field",
+    "network": "tcp,udp",
+    "balancerTag": "fast"
+   }
+  ]
+ },
+ "observatory": {
+  "subjectSelector": [
+   "proxy-0",
+   "proxy-1",
+   "proxy-2",
+   "proxy-3",
+   "proxy-4",
+   "proxy-5",
+   "proxy-6",
+   "proxy-direct"
+  ],
+  "probeURL": "https://www.gstatic.com/generate_204",
+  "probeInterval": "45s",
+  "enableConcurrency": true
+ },
+ "policy": {
+  "levels": {
+   "0": {
+    "handshake": 4,
+    "connIdle": 300,
+    "uplinkOnly": 1,
+    "downlinkOnly": 1,
+    "bufferSize": 4
+   }
+  }
+ }
+}
