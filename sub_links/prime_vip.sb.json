@@ -75,6 +75,7 @@
     "proxy-3",
     "proxy-4",
     "proxy-5",
+    "proxy-6",
     "proxy-direct"
    ],
    "default": "auto"
@@ -89,6 +90,7 @@
     "proxy-3",
     "proxy-4",
     "proxy-5",
+    "proxy-6",
     "proxy-direct"
    ],
    "url": "https://www.gstatic.com/generate_204",
@@ -99,7 +101,7 @@
   {
    "type": "vless",
    "tag": "proxy-0",
-   "server": "speed.cloudflare.com",
+   "server": "172.64.149.23",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
    "tls": {
@@ -130,7 +132,7 @@
   {
    "type": "vless",
    "tag": "proxy-1",
-   "server": "cp.cloudflare.com",
+   "server": "speed.cloudflare.com",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
    "tls": {
@@ -161,7 +163,7 @@
   {
    "type": "vless",
    "tag": "proxy-2",
-   "server": "www.visa.com.sg",
+   "server": "cp.cloudflare.com",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
    "tls": {
@@ -192,7 +194,7 @@
   {
    "type": "vless",
    "tag": "proxy-3",
-   "server": "zula.ir",
+   "server": "www.visa.com.sg",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
    "tls": {
@@ -223,7 +225,7 @@
   {
    "type": "vless",
    "tag": "proxy-4",
-   "server": "icook.hk",
+   "server": "zula.ir",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
    "tls": {
@@ -254,6 +256,37 @@
   {
    "type": "vless",
    "tag": "proxy-5",
+   "server": "icook.hk",
+   "server_port": 443,
+   "uuid": "2c652262-0857-401a-b607-c4c360258adf",
+   "tls": {
+    "enabled": true,
+    "server_name": "namely-vsnet-revenues-social.trycloudflare.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    },
+    "alpn": [
+     "http/1.1"
+    ]
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/killpv2",
+    "headers": {
+     "Host": "namely-vsnet-revenues-social.trycloudflare.com"
+    }
+   },
+   "tcp_fast_open": true,
+   "tls_fragment": {
+    "enabled": true,
+    "size": "10-30",
+    "sleep": "2-5"
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "proxy-6",
    "server": "ip.sb",
    "server_port": 443,
    "uuid": "2c652262-0857-401a-b607-c4c360258adf",
