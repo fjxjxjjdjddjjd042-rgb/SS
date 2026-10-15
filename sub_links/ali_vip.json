@@ -72,7 +72,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -81,7 +81,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -115,7 +115,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -124,7 +124,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -158,7 +158,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -167,7 +167,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -201,7 +201,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -210,7 +210,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -244,7 +244,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -253,7 +253,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -287,7 +287,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -296,7 +296,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
@@ -314,7 +314,7 @@
    "settings": {
     "vnext": [
      {
-      "address": "attend-sheer-competitors-role.trycloudflare.com",
+      "address": "tom-put-rise-bryan.trycloudflare.com",
       "port": 443,
       "users": [
        {
@@ -330,7 +330,7 @@
     "network": "ws",
     "security": "tls",
     "tlsSettings": {
-     "serverName": "attend-sheer-competitors-role.trycloudflare.com",
+     "serverName": "tom-put-rise-bryan.trycloudflare.com",
      "allowInsecure": false,
      "fingerprint": "chrome",
      "alpn": [
@@ -339,7 +339,7 @@
     },
     "wsSettings": {
      "path": "/killpv2",
-     "host": "attend-sheer-competitors-role.trycloudflare.com"
+     "host": "tom-put-rise-bryan.trycloudflare.com"
     },
     "sockopt": {
      "dialerProxy": "fragment",
